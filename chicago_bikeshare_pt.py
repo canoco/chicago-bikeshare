@@ -221,6 +221,15 @@ max_trip = 0.
 mean_trip = 0.
 median_trip = 0.
 
+stdl = sorted([float(i) for i in trip_duration_list])
+
+min_trip = stdl[0]
+max_trip = stdl[-1]
+mean_trip = sum(stdl)/len(stdl)
+if len(stdl) % 2 == 0:
+    median_trip = (stdl[len(stdl)//2] + stdl[len(stdl)//2 + 1]) / 2
+else: 
+    median_trip = stdl[len(stdl)//2]
 
 print("\nTAREFA 9: Imprimindo o mínimo, máximo, média, e mediana")
 print("Min: ", min_trip, "Max: ", max_trip, "Média: ", mean_trip, "Mediana: ", median_trip)
